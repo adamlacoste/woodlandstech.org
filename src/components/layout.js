@@ -1,3 +1,9 @@
-import React from "react"
+import React, { Fragment } from "react"
 
-export default ({ children }) => <div>{children}</div>
+export default ({ children }) => {
+  return <Fragment>
+    <div className="container grid-xl">
+      {children}
+    </div>
+  </Fragment>
+}

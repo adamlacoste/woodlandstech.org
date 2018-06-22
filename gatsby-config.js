@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `GatsbyJS RSS`,
     description: `A blog with RSS powered by GatsbyJS.`,
-    siteUrl: `https://gatsbyjs.org`,
+    siteUrl: `https://woodlandstech.org`,
   },
   plugins: [
     {
@@ -13,11 +13,9 @@ module.exports = {
       },
     },
     `gatsby-transformer-remark`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-sitemap`,
-      options: {
-        exclude: [`/secret`],
-      },
     },
   ],
 }
