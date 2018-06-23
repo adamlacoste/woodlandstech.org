@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
+import Helmet from "react-helmet"
 
 import "../styles/main.scss"
 
@@ -25,7 +26,11 @@ const IndexRoute = () => {
         </a>
 
         <h3>Join us on Meetup</h3>
-        <iframe width="225" height="570" src="//api.meetup.com/widget?p_width=225&p_urlname=Woodlands-Area-Software-Enthusiasts&head=eb20ffc1ccc69ce41599ab455ce077acbe83b8e9&q_groups=230009&name=mug_stats.live.html&p_height=570&q_events=230010&p__name=Meetup+Group+Stats&sig_id=184928307&sig=a70b312a9ec1e57ceb17b03d3a897055efb6b606" frameBorder="0" />
+
+        <blockquote className="embedly-card"><h4><a href="https://www.meetup.com/Woodlands-Area-Software-Enthusiasts/">Woodlands Area Software Enthusiasts</a></h4></blockquote>
+        <Helmet>
+          <script async src="//cdn.embedly.com/widgets/platform.js" charSet="UTF-8"></script>
+        </Helmet>
       </div>
     </Layout>
   );
