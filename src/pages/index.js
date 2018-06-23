@@ -25,7 +25,7 @@ const IndexRoute = () => {
         </a>
 
         <h3>Join us on Meetup</h3>
-        <iframe title="meetup"width="225" height="570" src="http://meetu.ps/3j0GH6" frameborder="0"></iframe>
+        <iframe title="meetup"width="225" height="570" src="https://meetu.ps/3j0GH6" frameborder="0"></iframe>
 
       </div>
     </Layout>
