@@ -25,8 +25,11 @@ const IndexRoute = () => {
         </a>
 
         <h3>Join us on Meetup</h3>
-        <iframe title="meetup"width="225" height="570" src="https://meetu.ps/3j0GH6" frameborder="0"></iframe>
+        {/*<iframe title="meetup"width="225" height="570" src="https://meetu.ps/3j0GH6" frameborder="0"></iframe>*/}
+        <iframe title="meetup"width="225" height="570" src="https://api.meetup.com/widget?p_width=225&p_urlname=Woodlands-Area-Software-Enthusiasts&head=eb20ffc1ccc69ce41599ab455ce077acbe83b8e9&q_groups=230009&name=mug_stats.live.html&p_height=570&q_events=230010&p__name=Meetup+Group+Stats&sig_id=184928307&sig=a70b312a9ec1e57ceb17b03d3a897055efb6b606" frameborder="0"></iframe>*
 
+
+      1https://www.meetup.com/Meditation-for-Western-Minds/events/
       </div>
     </Layout>
   );
