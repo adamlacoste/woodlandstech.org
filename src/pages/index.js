@@ -15,7 +15,7 @@ const IndexRoute = () => {
         </p>
 
         <p>
-          Join us to meet, share, and learn new topics on software and software development form
+          Join us to meet, share, and learn new topics on software and software development from
           the latest javascript libraries like React to the most ancient of mainframe languages.
         </p>
 
