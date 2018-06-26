@@ -1,6 +1,7 @@
 import React from "react"
-import Layout from "../components/layout"
 import Helmet from "react-helmet"
+
+import Layout from "../components/layout"
 
 import "../styles/main.scss"
 
@@ -8,7 +9,7 @@ const IndexRoute = () => {
   return (
     <Layout>
       <div>
-        <h1>Woodlands Area Software Enthusiasts</h1>
+        <h1>Woodlands Tech</h1>
         <p>
           We are the coders, software engineers, web devs and enthusiasts from the Woodlands and
           surrounding area.
@@ -20,6 +21,11 @@ const IndexRoute = () => {
         </p>
 
         <h3>Join us on Slack</h3>
+
+        <form action="https://us-central1-woodlandstech-invite.cloudfunctions.net/generateInvite" method="POST">
+          <input type="email" name="email" placeholder="Your email here" />
+          <button type="submit">Do it</button>
+        </form>
 
         <a className="btn btn-primary" href="https://join.slack.com/t/notwoodlandstech/shared_invite/enQtMzg2NTYyMTQyMTAwLWUwODg1YzAxYjA0OTk4YTlmNjk3ZjRkZTFlMDRkY2ViZTc3N2QxMmU3MzE2YmM2MWNjZTI4Yzc3YjNkMjMwYjk">
           Click here to join our Slack
