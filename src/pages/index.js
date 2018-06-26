@@ -3,8 +3,6 @@ import Helmet from "react-helmet"
 
 import Layout from "../components/layout"
 
-import "../styles/main.scss"
-
 const IndexRoute = () => {
   return (
     <Layout>
