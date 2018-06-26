@@ -5,7 +5,9 @@
   "version": "1.0.0",
   "author": "Nicholas Young <nicholas@nicholaswyoung.com>",
   "dependencies": {
+    "@blueprintjs/core": "^2.3.1",
     "gatsby": "next",
+    "gatsby-plugin-react-helmet": "^3.0.0-beta.2",
     "gatsby-plugin-sass": "^2.0.0-beta.2",
     "gatsby-plugin-sitemap": "next",
     "gatsby-source-filesystem": "next",

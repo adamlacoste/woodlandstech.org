@@ -5,17 +5,16 @@ module.exports = {
     siteUrl: `https://woodlandstech.org`,
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `posts`,
         path: `${__dirname}/posts`,
       },
-    },
-    `gatsby-transformer-remark`,
-    `gatsby-plugin-sass`,
-    {
-      resolve: `gatsby-plugin-sitemap`,
     },
   ],
 }
