@@ -10,7 +10,7 @@ const InvitedPage = (props) => {
   const result = queryString.parse(props.location.search);
 
   return (
-    <Layout>
+    <Layout title="Invited">
       {result.ok === 'true' ?
         <p>Invitation sent!</p> :
         <div>

@@ -5,9 +5,8 @@ import Layout from "../components/layout"
 
 const IndexRoute = () => {
   return (
-    <Layout>
+    <Layout title="Welcome">
       <div>
-        <h1>Woodlands Tech</h1>
         <p>
           We are the coders, software engineers, web devs and enthusiasts from the Woodlands and
           surrounding area.
@@ -20,14 +19,16 @@ const IndexRoute = () => {
 
         <h3>Join us on Slack</h3>
 
-        <form action="https://us-central1-woodlandstech-invite.cloudfunctions.net/generateInvite" method="POST">
-          <input type="email" name="email" placeholder="Your email here" />
-          <button type="submit">Do it</button>
-        </form>
 
-        <a className="btn btn-primary" href="https://join.slack.com/t/notwoodlandstech/shared_invite/enQtMzg2NTYyMTQyMTAwLWUwODg1YzAxYjA0OTk4YTlmNjk3ZjRkZTFlMDRkY2ViZTc3N2QxMmU3MzE2YmM2MWNjZTI4Yzc3YjNkMjMwYjk">
-          Click here to join our Slack
-        </a>
+        <form className="form-horizontal" action="https://us-central1-woodlandstech-invite.cloudfunctions.net/generateInvite" method="POST">
+          <div className="form-group">
+            <div className="input-group">
+              <span className="input-group-addon">Email</span>
+              <input className="form-input col-2 col-sm-12" type="email" name="email" placeholder="Your email here" />
+              <button className="btn btn-primary input-group-btn" type="submit">Join our slack workspace</button>
+            </div>
+          </div>
+        </form>
 
         <h3>Join us on Meetup</h3>
 
