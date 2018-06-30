@@ -1,5 +1,6 @@
 // invited.js - Slack invite results
 // Receives the Slack API response in the form of query string
+
 import React from 'react';
 
 import Layout from "../components/layout"

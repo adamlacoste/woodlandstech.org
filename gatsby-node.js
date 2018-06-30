@@ -1,10 +1,30 @@
-const path = require(`path`)
-const slash = require(`slash`)
+const path = require(`path`);
+const slash = require(`slash`);
+
+const { meetups, getMeetupUrl } = require('./meetups');
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
+  console.log(meetups);
+
   return new Promise((resolve, reject) => {
+    // Create meetup pages
+    const meetupTemplate = path.resolve(`src/templates/meetup.js`);
+
+    // Extract SEO friendly slug
+    meetups.forEach(m => {
+      createPage({
+        path: getMeetupUrl(m),
+        component: slash(meetupTemplate),
+        context: {
+          meetup: m,
+        }
+      })
+    });
+
+
+    // Create blog pages
     const blogPostTemplate = path.resolve(`src/templates/template-blog-post.js`)
     graphql(
       `
@@ -29,7 +49,6 @@ exports.createPages = ({ graphql, actions }) => {
         reject(result.errors)
       }
 
-      // Create blog posts pages.
       result.data.allMarkdownRemark.edges.forEach(edge => {
         createPage({
           path: edge.node.fields.slug, // required

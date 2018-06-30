@@ -1,6 +1,7 @@
-@import "node_modules/spectre.css/src/spectre";
-@import "node_modules/spectre.css/src/_icons.scss";
+@import url("https://fonts.googleapis.com/css?family=Lato");
 
-.embedly-card-hug {
-  margin: 5px 0 !important;
-}
+$font-family-base: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+@import "node_modules/bootstrap/scss/bootstrap-grid.scss";
+
