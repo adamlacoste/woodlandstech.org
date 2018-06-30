@@ -3,6 +3,7 @@ import Helmet from 'react-helmet'
 import { Link } from 'gatsby';
 
 import GoOrganization from 'react-icons/lib/go/organization';
+import GoThreeBars from 'react-icons/lib/go/three-bars';
 
 import "../styles/main.scss"
 
@@ -34,9 +35,11 @@ export default class extends React.Component {
     return (<Fragment>
       <Helmet title={this.props.title ? `${this.props.title} | Woodlands Tech` : 'Woodlands Tech'} />
 
-      <Navbar color="light" expand="md" className="container">
+      <Navbar expand="md" className="container">
         <NavbarBrand tag={Link} to="/">Woodlands Tech</NavbarBrand>
-        <NavbarToggler onClick={this.toggle} />
+        <NavbarToggler onClick={this.toggle}>
+          Menu&nbsp;<GoThreeBars />
+        </NavbarToggler>
         <Collapse isOpen={this.state.isOpen} navbar>
 
           <Nav>
