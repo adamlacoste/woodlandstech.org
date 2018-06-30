@@ -12,6 +12,7 @@ const slugify = require('slugify');
  *   location: string  
  *   description: string
  *   map?: URL (generated from google maps -> share -> embed iframe src)
+ *   rsvp?: { link: string, href: string } 
  * }
  * 
  * Map 
@@ -38,7 +39,11 @@ module.exports = {
   
   Lazy Loading / Code Splitting Tutorial - https://serverless-stack.com/chapters/code-splitting-in-create-react-app.html
   
-  So bring your laptop and I'll see y'all there!`
+  So bring your laptop and I'll see y'all there!`,
+      rsvp: {
+        link: `https://www.meetup.com/Woodlands-Area-Software-Enthusiasts/events/251786516/`,
+        text: 'RSVP on Meetup',
+      }
     },
     {
       date: '2018-07-12',

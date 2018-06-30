@@ -62,6 +62,12 @@ export default class MeetupInfo extends React.Component {
         {this.props.short &&
           <p className="card-text"><Link to={getMeetupUrl(m)}><strong>Read more</strong></Link></p>
         }
+
+        {m.rsvp &&
+          <p className="card-text">
+            <a className="btn btn-danger" href={m.rsvp.link}>{m.rsvp.text}</a>
+          </p>
+        }
       </div>
     </div>
   }
