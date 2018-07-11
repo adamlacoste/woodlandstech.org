@@ -49,7 +49,8 @@ module.exports = {
       date: '2018-07-12',
       time: '5:30 to 7:30 PM',
       title: 'Software and Drinks',
-      location: 'TBD',
+      location: 'Black Walnut Cafe',
+      map: `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3449.100276572834!2d-95.48173328498861!3d30.177129381834195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8647312c9c7805bf%3A0xc9eee5be2d30fd5c!2s9000+New+Trails+Dr%2C+The+Woodlands%2C+TX+77381!5e0!3m2!1sen!2sus!4v1531272810235`,
       description: `Like to code or talk tech? Enjoy adult beverages? Come out and hang, talk shop, and get away from the computer screen.
       
 Join other software enthusiasts at a [probably] fine Woodlands area drinking establishment. Post idea locations in the RSVP.
