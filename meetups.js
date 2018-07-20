@@ -22,6 +22,20 @@ const slugify = require('slugify');
 module.exports = {
   meetups: [
     {
+      date: '2018-08-14',
+      time: '6:00 to 8:00 PM',
+      title: 'Intro to GraphQL: A new way to build APIs',
+      location: 'BubbleUp LLC',
+      map: `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3449.4164388564677!2d-95.46816768485667!3d30.16809598183751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8647343cc2fac92b%3A0x3d0a2df8bad6a42c!2sBubbleUp+Digital+Marketing+Agency!5e0!3m2!1sen!2sus!4v1530317673925`,
+      description: `
+GraphQL represents a new language created by Facebook to simplify how distributed systems share information. This new way of building an API is being used in production at Facebook since 2013 and is currently used by Twitter, Github, Pinterest, Yelp and more. This talk will cover the basics of GraphQL, review some of the advantages and disadvantages, create an example graphql schema, and then review AWS appsync as a potential graphql provider with an example application.`,
+
+      rsvp: {
+        link: `https://www.meetup.com/Woodlands-Area-Software-Enthusiasts/events/252944067/`,
+        text: 'RSVP on Meetup',
+      }
+    },
+    {
       date: '2018-07-19',
       time: '6:00 to 8:00 PM',
       title: 'React: Basics and Lazy Loading with create-react-app',

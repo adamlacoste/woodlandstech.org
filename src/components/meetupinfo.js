@@ -38,7 +38,13 @@ export default class MeetupInfo extends React.Component {
 
   render() {
     const { meetup: m } = this.props;
-  
+
+    const date = DateTime.fromISO(m.date);
+
+    const today = DateTime.fromJSDate(new Date());
+
+    const isPast = today.diff(date, 'days');
+
     return <div className="card mb-2">
       <div className="card-body">
         <h5 className="card-title">
@@ -46,10 +52,7 @@ export default class MeetupInfo extends React.Component {
         </h5>
         <p className="card-text">
           <GoCalendar />
-          {` Time `}
-          {DateTime.fromISO(m.date).toLocaleString(DateTime.DATE_FULL)}
-          {` `}
-          {m.time}
+          {` Time ${date.toLocaleString(DateTime.DATE_FULL)} ${m.time}`}
         </p>
         <p className="card-text">
           <GoClock />
@@ -63,7 +66,7 @@ export default class MeetupInfo extends React.Component {
           <p className="card-text"><Link to={getMeetupUrl(m)}><strong>Read more</strong></Link></p>
         }
 
-        {m.rsvp &&
+        {m.rsvp && (isPast < 0) &&
           <p className="card-text">
             <a className="btn btn-danger" href={m.rsvp.link}>{m.rsvp.text}</a>
           </p>
