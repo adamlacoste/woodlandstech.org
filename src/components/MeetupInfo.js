@@ -16,25 +16,22 @@ export class MeetupInfo extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {}
-  }
-
-  componentDidMount() {
     let { description } = this.props.meetup;
 
-    let shortDescription = description.slice(0, 250);
+    let shortDescription = description.slice(0, 250).trim();
     if(description.length >= 250) {
       shortDescription += '...';
     }
 
-    console.log(shortDescription);
+    // This has to be done in the constructor for SSR to work.
+    const doc = remarker.processSync(this.props.short ? shortDescription : description);
+    const htmlDescription = doc.contents;
 
-    remarker.process(this.props.short ? shortDescription : description).then(htmlDescription => {
-      this.setState({ htmlDescription: htmlDescription.contents, shortDescription });
-    })
+    this.state = { htmlDescription, shortDescription };
   }
 
   render() {
+
     const { siteUrl, meetup: m } = this.props;
 
     const date = DateTime.fromISO(m.date);
@@ -47,7 +44,7 @@ export class MeetupInfo extends React.Component {
       <Fragment>
         <Helmet>
           <meta name="twitter:card" content="summary" />
-          <meta property="og:url" content={`${siteUrl}/${m.url}`} />
+          <meta property="og:url" content={`${siteUrl}/{m.url}`} />
           <meta property="og:title" content={m.title} />
           <meta property="og:description" content={this.state.shortDescription} />
           <meta property="og:image" content={`${siteUrl}/static/woodlandstech.jpg`} />
