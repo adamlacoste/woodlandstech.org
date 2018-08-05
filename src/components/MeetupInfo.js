@@ -27,6 +27,7 @@ export class MeetupInfo extends React.Component {
       shortDescription += '...';
     }
 
+    console.log(shortDescription);
 
     remarker.process(this.props.short ? shortDescription : description).then(htmlDescription => {
       this.setState({ htmlDescription: htmlDescription.contents, shortDescription });
