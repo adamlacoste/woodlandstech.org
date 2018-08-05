@@ -46,7 +46,7 @@ export class MeetupInfo extends React.Component {
       <Fragment>
         <Helmet>
           <meta name="twitter:card" content="summary" />
-          <meta property="og:url" content={`${siteUrl}/{m.url}`} />
+          <meta property="og:url" content={`${siteUrl}/${m.url}`} />
           <meta property="og:title" content={m.title} />
           <meta property="og:description" content={this.state.shortDescription} />
           <meta property="og:image" content={`${siteUrl}/static/woodlandstech.jpg`} />

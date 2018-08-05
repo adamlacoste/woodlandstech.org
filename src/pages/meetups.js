@@ -1,6 +1,8 @@
 // Meetups.js - full list of meetups
 
 import React from 'react';
+import { graphql } from 'gatsby';
+
 import Layout from '../components/layout';
 import { MeetupInfo } from '../components/MeetupInfo'
 import { meetups }  from '../../meetups';

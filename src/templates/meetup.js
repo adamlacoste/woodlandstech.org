@@ -6,11 +6,11 @@ import { MeetupInfo } from '../components/MeetupInfo';
 
 class MeetupPage extends React.Component {
   render() {
-    const { meetup } = this.props.pageContext;
+    const { siteUrl, meetup } = this.props.pageContext;
 
     return <Layout title={meetup.title}>
       <div className="container">
-        <MeetupInfo meetup={meetup} />
+        <MeetupInfo siteUrl={siteUrl} meetup={meetup} />
         {meetup.map &&
           <Fragment>
             <h3>Directions</h3>

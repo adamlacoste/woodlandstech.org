@@ -6,22 +6,40 @@ const { meetups } = require('./meetups');
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
-  console.log(meetups);
-
   return new Promise((resolve, reject) => {
     // Create meetup pages
     const meetupTemplate = path.resolve(`src/templates/meetup.js`);
 
-    // Extract SEO friendly slug
-    meetups.forEach(m => {
-      createPage({
-        path: m.url,
-        component: slash(meetupTemplate),
-        context: {
-          meetup: m,
+    graphql(`
+      {
+        site {
+          siteMetadata { 
+            siteUrl
+          }
         }
-      })
-    });
+      }
+    `).then(result => {
+
+      if(result.errors) {
+        console.error(result.errors);
+        return reject(result.errors);
+      }
+      
+      
+      const { siteUrl } = result.data.site.siteMetadata;
+
+      // Extract SEO friendly slug
+      meetups.forEach(m => {
+        createPage({
+          path: m.url,
+          component: slash(meetupTemplate),
+          context: {
+            siteUrl,
+            meetup: m,
+          }
+        })
+      });
+    })
 
 
     // Create blog pages
@@ -45,8 +63,8 @@ exports.createPages = ({ graphql, actions }) => {
       `
     ).then(result => {
       if (result.errors) {
-        console.log(result.errors)
-        reject(result.errors)
+        console.error(result.errors)
+        return reject(result.errors)
       }
 
       result.data.allMarkdownRemark.edges.forEach(edge => {
