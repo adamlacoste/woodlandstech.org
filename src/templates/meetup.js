@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 
 import Layout from '../components/layout';
 
-import MeetupInfo from '../components/meetupinfo';
+import { MeetupInfo } from '../components/MeetupInfo';
 
 class MeetupPage extends React.Component {
   render() {

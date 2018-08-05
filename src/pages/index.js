@@ -1,5 +1,5 @@
 import React from "react"
-import { Jumbotron, Form, Label, Input, FormGroup } from 'reactstrap';
+import { Jumbotron } from 'reactstrap';
 
 import Layout from "../components/layout"
 import SlackInvite from "../components/SlackInvite";

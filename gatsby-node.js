@@ -1,7 +1,7 @@
 const path = require(`path`);
 const slash = require(`slash`);
 
-const { meetups, getMeetupUrl } = require('./meetups');
+const { meetups } = require('./meetups');
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
@@ -15,7 +15,7 @@ exports.createPages = ({ graphql, actions }) => {
     // Extract SEO friendly slug
     meetups.forEach(m => {
       createPage({
-        path: getMeetupUrl(m),
+        path: m.url,
         component: slash(meetupTemplate),
         context: {
           meetup: m,
