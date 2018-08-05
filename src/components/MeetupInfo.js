@@ -47,7 +47,7 @@ export class MeetupInfo extends React.Component {
           <meta property="og:url" content={`${siteUrl}/{m.url}`} />
           <meta property="og:title" content={m.title} />
           <meta property="og:description" content={this.state.shortDescription} />
-          <meta property="og:image" content={`${siteUrl}/images/woodlandstech.jpg`} />
+          <meta property="og:image" content={`${siteUrl}/images/woodlands.jpg`} />
         </Helmet>
         <div className="card mb-2">
           <div className="card-body">
