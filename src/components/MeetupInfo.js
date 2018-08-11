@@ -17,6 +17,8 @@ export class MeetupInfo extends React.Component {
 
     const isPast = today.diff(date, 'days');
 
+    console.log("I want to understand this", m);
+
     return (
       <Fragment>
         <Helmet>
@@ -40,9 +42,10 @@ export class MeetupInfo extends React.Component {
               <GoClock />
               {` Location:  ${m.location}`}
             </p>
-            <p className="card-text" dangerouslySetInnerHTML={{__html: short ? m.shortHtmlDescription : m.htmlDescription}}>
-            </p>
-            {m.shortHtmlDescription &&
+
+            <div className="card-text" dangerouslySetInnerHTML={{__html: (short ? m.shortHtmlDescription : m.htmlDescription)}} />
+
+            {short &&
               <p className="card-text"><Link to={m.url}><strong>Read more</strong></Link></p>
             }
 

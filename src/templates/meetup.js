@@ -7,6 +7,7 @@ import { MeetupInfo } from '../components/MeetupInfo';
 class MeetupPage extends React.Component {
   render() {
     const { siteUrl, meetup } = this.props.pageContext;
+    console.log(this.props);
 
     return <Layout title={meetup.title}>
       <div className="container">
