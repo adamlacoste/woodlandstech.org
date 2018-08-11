@@ -3,6 +3,11 @@
 
 const slugify = require('slugify');
 
+const remark = require('remark');
+const html = require('remark-html');
+
+const remarker = remark().use(html);
+
 /**
  * Meetup objects look like this:
  * {
@@ -86,8 +91,24 @@ const getMeetupUrl = (m) => {
   return `/meetups/${slug}`;
 }
 
+/**
+ * Post-processing: determine permalink URL, create HTML descriptions using remark etc
+ * 
+ */
+
 meetups.forEach(m => {
+  const { description } = m;
+
   m.url = getMeetupUrl(m);
+
+  let shortDescription = description.slice(0, 250).trim();
+  if(description.length >= 250) {
+    shortDescription += '...';
+  }
+
+  m.shortDescription = shortDescription;
+  m.shortHtmlDescription = remarker.processSync(shortDescription).contents;
+  m.htmlDescription = remarker.processSync(description).contents;
 })
 
 module.exports = { meetups };

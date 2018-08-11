@@ -7,32 +7,9 @@ import GoCalendar from 'react-icons/lib/go/calendar';
 import GoClock from 'react-icons/lib/go/clock';
 import { DateTime } from 'luxon';
 
-const remark = require('remark');
-const html = require('remark-html');
-
-const remarker = remark().use(html);
-
 export class MeetupInfo extends React.Component {
-  constructor(props) {
-    super(props);
-
-    let { description } = this.props.meetup;
-
-    let shortDescription = description.slice(0, 250).trim();
-    if(description.length >= 250) {
-      shortDescription += '...';
-    }
-
-    // This has to be done in the constructor for SSR to work.
-    const doc = remarker.processSync(this.props.short ? shortDescription : description);
-    const htmlDescription = doc.contents;
-
-    this.state = { htmlDescription, shortDescription };
-  }
-
   render() {
-
-    const { siteUrl, meetup: m } = this.props;
+    const { short, siteUrl, meetup: m } = this.props;
 
     const date = DateTime.fromISO(m.date);
 
@@ -47,7 +24,7 @@ export class MeetupInfo extends React.Component {
           <meta property="og:site_name" content="woodlandstech.org" />
           <meta property="og:url" content={`${siteUrl}/${m.url}`} />
           <meta property="og:title" content={m.title} />
-          <meta property="og:description" content={this.state.shortDescription} />
+          <meta property="og:description" content={m.shortDescription} />
           <meta property="og:image" content={`${siteUrl}/images/woodlands.jpg`} />
         </Helmet>
         <div className="card mb-2">
@@ -63,11 +40,9 @@ export class MeetupInfo extends React.Component {
               <GoClock />
               {` Location:  ${m.location}`}
             </p>
-            {this.state.htmlDescription &&
-              <p className="card-text" dangerouslySetInnerHTML={{__html: this.state.htmlDescription}}>
-              </p>
-            }
-            {this.props.short &&
+            <p className="card-text" dangerouslySetInnerHTML={{__html: short ? m.shortHtmlDescription : m.htmlDescription}}>
+            </p>
+            {m.shortHtmlDescription &&
               <p className="card-text"><Link to={m.url}><strong>Read more</strong></Link></p>
             }
 
