@@ -27,7 +27,7 @@ const IndexRoute = () => {
 
         <p>
           Join us to meet, share, and learn new topics on software and software development from
-          the latest javascript libraries like React to the most ancient of mainframe languages.
+          the latest javascript libraries like React to the most ancient of mainframe languages.p
         </p>
       </div>
 
