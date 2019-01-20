@@ -4,7 +4,7 @@ import { Form, Label, Input, FormGroup } from 'reactstrap';
 
 export default () => {
   return (
-    <Form action="https://us-central1-woodlandstech-invite.cloudfunctions.net/generateInvite" method="POST">
+    <Form action="https://us-central1-woodlandstech-invite.cloudfunctions.net/woodlandstech-backend/generateInvite" method="POST">
       <FormGroup>
         <Label for="email">Email</Label>
         <Input required type="email" name="email" id="email" placeholder="name@example.com" />
