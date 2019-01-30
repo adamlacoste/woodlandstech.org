@@ -24,7 +24,8 @@ const remarker = remark().use(html);
  */
 
 // Add by ascending date (most recent meetups at the top)
-const meetups = [
+const meetups = [];
+/*              [
   {
     date: '2018-08-14',
     time: '6:00 to 8:00 PM',
@@ -80,6 +81,7 @@ See y'all there!`,
     }
   },
 ];
+*/
 
 
 const getMeetupUrl = (m) => {
