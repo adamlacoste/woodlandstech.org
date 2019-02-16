@@ -3,11 +3,21 @@ const slash = require(`slash`);
 
 const { meetups } = require('./meetups');
 
+const { meetupEvents } = require('./src/api');
+
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   return new Promise((resolve, reject) => {
-    // Create meetup pages
+    // Create meetup pages from API
+
+    meetupEvents().then(data => {
+      console.log(data)
+    }).error(data => console.error(error));
+
+
+
+    // Create meetup pages from static data
     const meetupTemplate = path.resolve(`src/templates/meetup.js`);
 
     graphql(`
@@ -18,14 +28,14 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       }
-    `).then(result => {
+    `).then(async (result) => {
 
-      if(result.errors) {
+      if (result.errors) {
         console.error(result.errors);
         return reject(result.errors);
       }
-      
-      
+
+
       const { siteUrl } = result.data.site.siteMetadata;
 
       // Extract SEO friendly slug
@@ -108,3 +118,6 @@ function ensureSlashes(slug) {
 
   return slug
 }
+
+
+console.log('running gatsby-node!');

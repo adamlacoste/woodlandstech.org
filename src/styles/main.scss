@@ -1,7 +1,22 @@
 @import url("https://fonts.googleapis.com/css?family=Lato");
 
-$font-family-base: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-
 @import "node_modules/bootstrap/scss/bootstrap.scss";
 @import "node_modules/bootstrap/scss/bootstrap-grid.scss";
 
+$font-family-base: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$fg: #0c0c0c;
+
+body {
+  color: $fg;
+}
+
+.navbar-brand {
+  text-transform: uppercase;
+  color: $fg;
+  font-size: 1.5rem;
+
+  &:hover {
+    color: $fg;
+  }
+}

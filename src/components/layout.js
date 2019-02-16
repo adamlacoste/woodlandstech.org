@@ -26,8 +26,9 @@ export default class extends React.Component {
       isOpen: false,
     }
   }
+
   toggle = () => {
-    this.setState({ 
+    this.setState({
       isOpen: !this.state.isOpen,
     })
   }
