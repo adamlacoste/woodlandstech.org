@@ -79,6 +79,18 @@ main {
   p:last-of-type {
     margin-bottom: 0;
   }
+
+  @media(min-width: $bp-tablet) {
+    > div {
+      width: 1200px;
+    }
+  }
+
+  @media(max-width: $bp-tablet) {
+    > div {
+      width: 85vw;
+    }
+  }
 }
 
 .brand {

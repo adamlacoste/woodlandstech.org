@@ -26,18 +26,23 @@ const InvitedPage = (props) => {
 
   return (
     <Layout title="Invited">
-      <div className="container">
-        {result.ok === 'true' ?
-          <p>Invitation sent!</p> :
-          <div>
-            <div className="alert alert-danger">
-              Failed to send invitation:
-                <Message error={result.error} />
-            </div>
-            <Invite />
+      <main className="body flex justify-around">
+        <div className="hero">
+          <div className="p2">
+
+            {result.ok === 'true' ?
+              <p>Invitation sent!</p> :
+              <div>
+                <div className="alert alert-danger">
+                  Failed to send invitation:
+                  <Message error={result.error} />
+                </div>
+                <Invite />
+              </div>
+            }
           </div>
-        }
-      </div>
+        </div>
+      </main>
     </Layout>
   );
 }
