@@ -6,7 +6,7 @@ import React from 'react';
 import queryString from 'query-string';
 
 import Layout from "../components/layout"
-import SlackInvite from '../components/SlackInvite';
+import Invite from '../components/Invite';
 
 const messages = {
   'invalid_email': 'The email you entered is invalid.',
@@ -15,7 +15,7 @@ const messages = {
 }
 
 const Message = ({ error }) => {
-  if(messages[error]) return <span>{messages[error]}</span>;
+  if (messages[error]) return <span>{messages[error]}</span>;
 
   return <span>Unknown Slack invite error code </span>
 
@@ -34,7 +34,7 @@ const InvitedPage = (props) => {
               Failed to send invitation:
                 <Message error={result.error} />
             </div>
-            <SlackInvite />
+            <Invite />
           </div>
         }
       </div>

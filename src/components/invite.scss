@@ -1,0 +1,33 @@
+@import "../styles/variables";
+
+.invite {
+  .invite-box {
+    @media (max-width: $bp-phone) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  input {
+    font-size: 1.4rem;
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: none;
+    @media (max-width: $bp-phone) {
+      border-radius: 2px 2px 0 0;
+    }
+  }
+
+  button {
+    background-color: #dd002c;
+    font-size: 1.4rem;
+    border: 0;
+    border-radius: 2px;
+    @media (max-width: $bp-phone) {
+      border-radius: 0 0 2px 2px;
+      margin-left: 0;
+    }
+    margin-left: -2px;
+    color: white;
+  }
+}

@@ -1,12 +1,12 @@
 import React from "react"
-import { Jumbotron } from 'reactstrap';
 
 import Layout from "../components/layout"
-import SlackInvite from "../components/SlackInvite";
+import Invite from "../components/Invite";
 
 const IndexRoute = () => {
   return (
     <Layout title="Welcome">
+      {/*
       <div>
         <Jumbotron>
           <div className="container">
@@ -30,7 +30,21 @@ const IndexRoute = () => {
           the latest javascript libraries like React to the most ancient of mainframe languages.
         </p>
       </div>
+      */}
 
+      <main className="body flex justify-around">
+        <div className="hero ">
+          <div className="p2">
+            <p>
+              We are the coders, software engineers, web devs and enthusiasts from the Woodlands and surrounding area.
+            </p>
+            <p>
+              Join us to meet, share, and learn new topics on software and software development from the latest javascript libraries like React to the most ancient of mainframe languages.
+            </p>
+            <Invite />
+          </div>
+        </div>
+      </main>
     </Layout>
   );
 }
