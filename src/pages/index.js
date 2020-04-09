@@ -1,7 +1,6 @@
 import React from "react"
 
 import Layout from "../components/layout"
-import Invite from "../components/Invite";
 
 const IndexRoute = () => {
   return (
@@ -43,7 +42,7 @@ const IndexRoute = () => {
             </p>
 
             <p>Invite system is currently down. Working with slack to resolve our limits. Send a note on meetup.com and we will get you setup as soon as the issue is resolved. - Mikhail
-            <Invite />
+  
           </div>
         </div>
       </main>
