@@ -42,7 +42,7 @@ const IndexRoute = () => {
               Join us to meet, share, and learn new topics on software and software development from the latest javascript libraries like React to the most ancient of mainframe languages.
             </p>
 
-            <p>Enter your email to receive a Slack invite.</p>
+            <p>Invite system is currently down. Working with slack to resolve our limits. Send a note on meetup.com and we will get you setup as soon as the issue is resolved. - Mikhail
             <Invite />
           </div>
         </div>
